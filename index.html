@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Grid</title>
+  <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- https://www.sitepoint.com/css3-transform-background-image/ -->
+</head>
+<body>
+
+  <header class="header">
+    <h1 class="header-title"><img src="img/tron.png" alt="Tron" width="50%" height="50%"></h1>
+  </header>
+<div class="wrapper">
+<h2 class="title2">Background css transform</h2>
+<pre><code class="code language-css">.header {
+    position: relative;
+    overflow: hidden;
+    [...]
+    perspective: 700px;
+  }
+
+  .header:before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -30%;
+    left: -50%;
+    z-index: -1;
+    background: url(../img/grid2.jpg) 0 0 repeat;
+    background-size: 200px, 200px;
+    transform-origin: top;
+    [...]
+  }
+</code></pre>
+
+<h2 class="title2">Animation</h2>
+<pre><code class="code language-css">.header:before {
+  animation: moving-bg 10s linear infinite;
+}
+
+@keyframes moving-bg {
+  0%   { background-position: 0 0; }
+  100% { background-position: 0 -100px; }
+}</code></pre>
+
+<footer><p class="footer-copy">&copy; 2017 - iStuffs</p></footer>
+
+</div>
+<script src="script/prism.js"></script>
+</body>
+</html>
