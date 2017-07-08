@@ -1,13 +1,14 @@
 @import "_normalize.scss";
+@import "_boxsizing.scss";
 @import "_prism.scss";
 
 body {
-  background-color:#112832; //#28586E;
+  background-color:#112832;
   color: #E1F2F9;
   font-family: 'Exo 2', sans-serif;
 }
 
-.title2 {
+.content-title {
   margin-top: 100px;
   font-weight: normal;
 }
@@ -27,6 +28,8 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
 }
 .header-title img {
+  min-height: 140px;
+  min-width: 361px;
   height: 30%;
   width: 30%;
 }
@@ -68,7 +71,7 @@ body {
 }
 
 .wrapper {
-  width: 900px;
+  max-width: 900px;
   margin: 0 auto;
 }
 pre {
@@ -78,4 +81,19 @@ pre {
   text-align: right;
   padding: 20px;
   padding-right: 0;
+}
+
+@media screen and(max-width: 1500px) {
+  .header-title {
+    top: 52%
+  }
+}
+@media screen and(max-width: 945px) {
+   .header {
+     height: 450px;
+   }
+   .wrapper {
+    width: 95%;
+    margin: 0 auto;
+  }
 }
