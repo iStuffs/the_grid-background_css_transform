@@ -389,6 +389,12 @@ template {
 [hidden] {
   display: none; }
 
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
 /* http://prismjs.com/download.html?themes=prism&languages=css */
 /**
  * prism.js default theme for JavaScript, CSS and HTML
@@ -411,7 +417,6 @@ pre[class*="language-"] {
   -o-tab-size: 4;
   tab-size: 4;
   -webkit-hyphens: none;
-  -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none; }
 
@@ -429,6 +434,7 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
   code[class*="language-"],
   pre[class*="language-"] {
     text-shadow: none; } }
+
 /* Code blocks */
 pre[class*="language-"] {
   padding: 1em;
@@ -510,7 +516,7 @@ body {
   color: #E1F2F9;
   font-family: 'Exo 2', sans-serif; }
 
-.title2 {
+.content-title {
   margin-top: 100px;
   font-weight: normal; }
 
@@ -525,7 +531,6 @@ body {
   text-align: center;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,1+50,0+100 */
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, transparent 0%, black 40%, black 60%, transparent 100%);
   /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, transparent 0%, black 40%, black 60%, transparent 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
@@ -533,6 +538,8 @@ body {
   /* IE6-9 */ }
 
 .header-title img {
+  min-height: 140px;
+  min-width: 361px;
   height: 30%;
   width: 30%; }
 
@@ -579,8 +586,9 @@ body {
     background-position: 0 0; }
   100% {
     background-position: 0 -100px; } }
+
 .wrapper {
-  width: 900px;
+  max-width: 900px;
   margin: 0 auto; }
 
 pre {
@@ -590,3 +598,14 @@ pre {
   text-align: right;
   padding: 20px;
   padding-right: 0; }
+
+@media screen and (max-width: 1500px) {
+  .header-title {
+    top: 52%; } }
+
+@media screen and (max-width: 945px) {
+  .header {
+    height: 450px; }
+  .wrapper {
+    width: 95%;
+    margin: 0 auto; } }
